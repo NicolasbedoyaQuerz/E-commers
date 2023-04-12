@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useSelector, useDispatch } from 'react-redux';
-import { getProductsThunk, filterCategoriesThunk } from '../store/slices/Products.slice';
+import { getProductsThunk, filterCategoriesThunk} from '../store/slices/products.slice'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
