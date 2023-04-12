@@ -4,23 +4,42 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useSelector, useDispatch } from 'react-redux';
-import { getProductsThunk } from '../store/slices/Products.slice';
-import { useEffect } from 'react';
+import { getProductsThunk, filterCategoriesThunk } from '../store/slices/Products.slice';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+
 
 
 const Home = () => {
 
-
+    const [categories, setCategories] = useState([])
     const dispatch = useDispatch()
     const products = useSelector(state => state.products)
 
     useEffect(() => {
         dispatch(getProductsThunk())
+
+        axios
+            .get('https://e-commerce-api-v2.academlo.tech/api/v1/categories')
+            .then(resp => setCategories(resp.data))
+            .catch(error => console.error(error))   
     }, [])
+
 
     return (
         <div>
             <Container>
+                <Row className='py=3'>
+                    {
+                        categories.map(category => (
+                            <Col key={category.id}>
+                                <Button className='w-100' onClick={() => dispatch(filterCategoriesThunk(category.id))}>{category.name}</Button>
+                            </Col>
+                        ))
+                    }
+                   
+                </Row>
                 <Row xs={1} md={2} lg={3} className='py-3'>
                     {
                         products.map( items => (

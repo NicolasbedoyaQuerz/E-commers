@@ -1,0 +1,15 @@
+.loader {
+    position: fixed;
+    background-color: rgb(209, 209, 209, 0.88);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+    z-index: 100;
+}
+
+.w-100 {
+    margin-top: 20px;
+}
