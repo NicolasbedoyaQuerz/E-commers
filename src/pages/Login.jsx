@@ -49,6 +49,11 @@ const Login = () => {
             style={{ maxWidth: 500, margin: '1rem auto', border: '1px solid grey', padding: '1rem'}}
             onSubmit={handleSubmit(submit)}
             >
+                <Form.Label style={{padding:'1rem'}}>Usuario de Prueba</Form.Label>
+                <br />
+                 <Form.Label style={{padding:'1rem'}}>Email: loktar@gmail.com</Form.Label>
+                 <br />
+                 <Form.Label style={{padding:'1rem'}}>Password: 1234</Form.Label>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control 
