@@ -13,3 +13,11 @@
 .w-100 {
     margin-top: 20px;
 }
+
+.pt-20 {
+    margin-top: 20px;
+}
+
+ul li {
+    list-style: none;
+}
